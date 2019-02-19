@@ -11,7 +11,16 @@ class App extends Component {
   render() {
     console.log(this.props.form);
     const { form } = this.props;
-    const mappedInputs = form.map(input => <label>{input.label}</label>);
+    const mappedInputs = form.map(item => (
+      <div key={item.componentId}>
+        <label>{item.label}</label>
+        {item.type === "textfield" && <input type="text" name={item.label} />}
+        {item.type === "datefield" && <input type="date" name={item.label} />}
+        {item.type === "ratingfield" && <input type="text" name={item.label} />}
+        {item.type === "urlfield" && <input type="url" name={item.label} />}
+        {item.helpBlock !== "" && <span value={item.helpBlock} />}
+      </div>
+    ));
 
     // if (!form.length) {
     //   return  }

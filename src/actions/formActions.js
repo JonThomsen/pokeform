@@ -19,17 +19,3 @@ export function fetchForm() {
       });
   };
 }
-
-// export function addTweet(id, text) {
-//   return {
-//     type: 'ADD_FORM',
-//     payload: {
-//       label,
-//       componentId,
-//       type,
-//       helpBlock,
-//       order,
-//       components
-//     },
-//   }
-// }
