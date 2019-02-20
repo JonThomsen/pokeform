@@ -13,7 +13,8 @@ h1::after {
   display: flex;
   align-items: center;
   height: 38px;
-  font-size: 28px;
+  font-size: 30px;
+  letter-spacing: 0.2em;
 }
 
 @media (min-width: 575px) {
