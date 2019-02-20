@@ -1,3 +1,21 @@
+h1::after {
+  content: "";
+  border: 1px solid #f7f7f7;
+  display: flex;
+}
+
+.form-pokemon {
+  border: 1px solid #f7f7f7;
+  margin: 10px auto;
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  font-size: 28px;
+}
+
 @media (min-width: 575px) {
   .align-right {
     text-align: right;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchForm } from "../actions/formActions";
+import Rater from "react-rater";
 import {
   Container,
   Row,
@@ -12,6 +13,7 @@ import {
   Input,
   FormText
 } from "reactstrap";
+import "react-rater/lib/react-rater.css";
 import "./app.css";
 
 class App extends Component {
@@ -23,7 +25,7 @@ class App extends Component {
   render() {
     console.log(this.props.form);
     const { form } = this.props;
-    const mappedInputs = form.map(item => (
+    const mappedInputs = form.map((item, index, arr) => (
       <FormGroup row key={item.componentId}>
         <Label className="align-right" sm={4}>
           {item.label}
@@ -32,7 +34,8 @@ class App extends Component {
           {item.type === "textfield" && <Input type="text" name={item.label} />}
           {item.type === "datefield" && <Input type="date" name={item.label} />}
           {item.type === "ratingfield" && (
-            <Input type="text" name={item.label} />
+            //<Input type="text" name={item.label} />
+            <Rater className="star-rating" total={5} rating={0} />
           )}
           {item.type === "urlfield" && (
             <Input type="url" pattern="https://.*" name={item.label} />
