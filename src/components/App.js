@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchForm } from "../actions/formActions";
-import StarRating from "react-star-rating";
 
 class App extends Component {
   fetchForm() {
@@ -21,6 +20,7 @@ class App extends Component {
         {item.type === "urlfield" && (
           <input type="url" pattern="https://.*" name={item.label} />
         )}
+        <br />
         {item.helpBlock !== null && <span>{item.helpBlock}</span>}
       </div>
     ));
