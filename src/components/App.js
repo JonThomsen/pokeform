@@ -4,7 +4,6 @@ import { fetchForm } from "../actions/formActions";
 import Rater from "react-rater";
 import {
   Container,
-  Row,
   Col,
   Button,
   Form,
@@ -26,7 +25,7 @@ class App extends Component {
     console.log(this.props.form);
     const { form } = this.props;
     const mappedInputs = form.map((item, index, arr) => (
-      <FormGroup row key={item.componentId}>
+      <FormGroup className="form-pokemon" row key={item.componentId}>
         <Label className="align-right" sm={4}>
           {item.label}
         </Label>
@@ -49,7 +48,7 @@ class App extends Component {
 
     return (
       <div>
-        <Container className="form-pokemon">
+        <Container className="container-form">
           <h1>Cadastro de Pokémon</h1>
           <Button size="sm" color="primary" onClick={this.fetchForm.bind(this)}>
             Load Form

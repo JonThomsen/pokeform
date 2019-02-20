@@ -2,9 +2,10 @@ h1::after {
   content: "";
   border: 1px solid #f7f7f7;
   display: flex;
+  margin: 10px;
 }
 
-.form-pokemon {
+.container-form {
   border: 1px solid #f7f7f7;
   margin: 10px auto;
 }
@@ -17,8 +18,12 @@ h1::after {
   letter-spacing: 0.2em;
 }
 
-@media (min-width: 575px) {
+@media (min-width: 576px) {
   .align-right {
     text-align: right;
+  }
+
+  .form-pokemon {
+    padding: 0 10px;
   }
 }
