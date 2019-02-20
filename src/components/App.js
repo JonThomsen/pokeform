@@ -10,7 +10,8 @@ import {
   FormGroup,
   Label,
   Input,
-  FormText
+  FormText,
+  Spinner
 } from "reactstrap";
 import "react-rater/lib/react-rater.css";
 import "./app.css";
@@ -23,8 +24,8 @@ class App extends Component {
 
   render() {
     console.log(this.props.form);
-    const { form } = this.props;
-    const mappedInputs = form.map((item, index, arr) => (
+    const { form, fetching } = this.props;
+    const mappedInputs = form.map(item => (
       <FormGroup className="form-pokemon" row key={item.componentId}>
         <Label className="align-right" sm={4}>
           {item.label}
@@ -53,6 +54,8 @@ class App extends Component {
           <Button size="sm" color="primary" onClick={this.fetchForm.bind(this)}>
             Load Form
           </Button>
+          {"  "}
+          {fetching && <Spinner size="sm" color="primary" />}
           <Form>{mappedInputs}</Form>
         </Container>
       </div>
@@ -62,7 +65,8 @@ class App extends Component {
 
 const mapStateToProps = store => {
   return {
-    form: store.form
+    form: store.form,
+    fetching: store.fetching
   };
 };
 
